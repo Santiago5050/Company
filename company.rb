@@ -10,12 +10,14 @@ humanoid_robot_1 = Humanoid.new('Humanoid Robot One')
 miner_robot_1 = Miner.new('Miner Robot One')
 
 flyer_robot_2 = Flyer.new('Flyer Robot Two') # robot not released
+miner_robot_2 = Miner.new('Miner Robot Two')
 
 # release them, now they are able to sell
 puts "Lanzando los robots...\n\n"
 flyer_robot_1.release!
 humanoid_robot_1.release!
 miner_robot_1.release!
+miner_robot_2.release!
 
 # People buy some of them
 person_1 = Person.new('John')
@@ -47,3 +49,4 @@ flyer_robot_1.show_info
 humanoid_robot_1.show_info
 miner_robot_1.show_info
 flyer_robot_2.show_info
+miner_robot_2.show_info

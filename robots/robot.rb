@@ -44,10 +44,10 @@ class Robot
 
   def show_info
     puts "\nNúmero de serie: #{@serial_number}"
-    puts "Nombre del robot #{@name}"
+    puts "Nombre: #{@name}"
     if @release
       if @buyed
-        puts "Estado: Fue comprado por: #{@person.name}"
+        puts "Estado: Comprado por: #{@person.name}"
       else
         puts "Estado: Lanzado"
       end
