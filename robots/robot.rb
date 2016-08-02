@@ -9,7 +9,7 @@ class Robot
     @released = false
     @buyed = false
     @@constructed += 1
-    @serial_number = Random.rand(9999)
+    @serial_number = Random.rand(000001..999999)
   end
 
   def release!
@@ -45,21 +45,31 @@ class Robot
   def show_info
     puts "\nNúmero de serie: #{@serial_number}"
     puts "Nombre: #{@name}"
-    if @release
-      if @buyed
-        puts "Estado: Comprado por: #{@person.name}"
-      else
-        puts "Estado: Lanzado"
-      end
-    else
-      puts "Estado: Construido"
-    end
-
-    unless @color.nil?
-      puts "Color: #{@color}"
-    else
-      puts "Color: No aplica"
-    end
+    show_status
+    show_color
   end
 
+  private
+
+  def show_status
+    puts "Estado: #{
+      if @release
+        if @buyed
+          "Vendido a: #{@person.name} #{@person.lastname}"
+        else
+          "Released"
+        end
+      else
+        "Construido"
+      end
+    }"
+  end
+
+  def show_color
+    puts "Color: #{unless @color.nil?
+      @color
+    else
+      "No aplica"
+    end }"
+  end
 end
